@@ -1,16 +1,11 @@
-# Prectice Object Orianted  Programme...........
-class Lalita:
-    def __init__(self, name, age, status):
-        self.name = name
-        self.age = age
-        self.status = status
+import string
 
-    def behaviour(self):
-        return "very sensitive girl"
+alp = string.ascii_letters
+print(alp)
 
-    def work(self):
-        return "housewife"
+class Magic:
+    def __init__(self):
+        self.file ={}
 
+    def get(self,char):
 
-my_wife = Lalita("Lalita", 22, "married")
-print(my_wife.behaviour())
