@@ -11,3 +11,5 @@ for i, ch in enumerate(letters):
         matrix.append([])
     matrix[row].append(ch)
 print(matrix)
+print(matrix[1])
+print(matrix[1][1])
