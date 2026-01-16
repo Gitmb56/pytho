@@ -8,19 +8,27 @@ class LetterGuessGame:
         self.possible_letters = set(self.letters)
 
         self.build_rows()
+        self.build_coloumns()
 
     def build_rows(self):
         """Alphabet ko rows me divide karta hai"""
         self.matrix = []
-
+        
         for i, ch in enumerate(self.letters):
             if i % self.cols == 0:
                 self.matrix.append([])
             self.matrix[i // self.cols].append(ch)
+    
+    def build_coloumns(self):
+        """Alpahabet ko columns me divide karta hai """
+        self.matrix = []
 
     def show_row(self, index):
         """Ek specific row dikhata hai"""
         print(f"\nRow {index}: {self.matrix[index]}")
+
+    def show_column(self,ind):
+        """Ek specific column dikhata hai"""
 
     def ask_user(self):
         """User se y/n input safely leta hai"""
@@ -29,6 +37,9 @@ class LetterGuessGame:
             if ans.lower() in ('y', 'n'):
                 return ans.lower()
             print("Sirf y ya n likhiye.")
+
+    def store_index_row_column(self,position):
+        """Row ya column ka index store karta hai"""
 
     def play(self):
         """Main game loop"""
