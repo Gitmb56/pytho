@@ -20,26 +20,37 @@ class LetterGuessGame:
             self.matrix[i // self.cols].append(ch)
     
     def build_coloumns(self):
-        """Alpahabet ko columns me divide karta hai """
-        self.matrix = []
+        """Alphabet ko columns me divide karta hai"""
+        self.matrix = [[] for _ in range(self.cols)]
+
+        for i, ch in enumerate(self.letters):
+            col_index = i % self.cols
+            self.matrix[col_index].append(ch)
+
+
 
     def show_row(self, index):
         """Ek specific row dikhata hai"""
         print(f"\nRow {index}: {self.matrix[index]}")
 
-    def show_column(self,ind):
+    def show_column(self, ind):
         """Ek specific column dikhata hai"""
+        print(f"\nColumn {ind}: {self.matrix[ind]}")
+
 
     def ask_user(self):
         """User se y/n input safely leta hai"""
+        usr_word = 
         while True:
             ans = input("Kya aapke word ka pehla letter is row me hai? (y/n): ")
             if ans.lower() in ('y', 'n'):
                 return ans.lower()
             print("Sirf y ya n likhiye.")
 
-    def store_index_row_column(self,position):
+    def store_index_row_column(self, position):
         """Row ya column ka index store karta hai"""
+        self.selected_index = position
+
 
     def play(self):
         """Main game loop"""
